@@ -16,7 +16,7 @@ import NewsLetter from './components/NewsLetter';
 import Footer from './components/Footer';
 
 
-export default function Home({blogs}) {
+export default function Home({blogs,featuredBlogs}) {
   const client = createClient({
     projectId: "liq8cp7u",
     dataset: "production",
@@ -24,7 +24,7 @@ export default function Home({blogs}) {
   });
   const builder = imageUrlBuilder(client)
   
-
+  {console.log(featuredBlogs)}
 
   return (
     <>
@@ -83,10 +83,12 @@ export const  getServerSideProps = async(context)=> {
   });
   const query = `*[_type == "blog"][0...3]`;
   const blogs = await client.fetch(query);
- 
+
+  const query1 = `*[_type == "featuredBlogs"]`;
+  const featuredBlogs = await client.fetch(query1);
  return {
     props: {
-      blogs
+      blogs,featuredBlogs
     
     }
   }

@@ -1,7 +1,7 @@
 
 
 export default {
-    name: 'FeaturedBlogs',
+    name: 'featuredBlogs',
     type: 'document',
       title: 'FeaturedBlogs',
     fields: [

@@ -9,7 +9,7 @@ const RecentPost = ({blogs}) => {
    
     <section className="pt-20 lg:pt-[120px] pb-10 lg:pb-20">
        <div className="container">
-          <div className="flex flex-wrap justify-center -mx-4">
+          {/* <div className="flex flex-wrap justify-center -mx-4">
              <div className="w-full px-4">
                 <div className="text-center mx-auto mb-[60px] lg:mb-20 max-w-[510px]">
                    <span className="font-semibold text-lg text-primary mb-2 block">
@@ -33,7 +33,7 @@ const RecentPost = ({blogs}) => {
                    </p>
                 </div>
              </div>
-          </div>
+          </div> */}
 
 
           <div className="flex flex-wrap -mx-4">

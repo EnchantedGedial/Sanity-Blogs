@@ -1,7 +1,24 @@
-import Link from 'next/link'
-import React from 'react'
+import Head from 'next/head'
+import Image from 'next/image'
+import 'bootstrap/dist/css/bootstrap.css'
 
-const Hero = () => {
+import { createClient } from "next-sanity";
+import Script from "next/script"
+import imageUrlBuilder from '@sanity/image-url'
+import Link from 'next/link'
+
+
+
+
+
+export default function Hero  ({featuredBlogs}){
+  const client = createClient({
+    projectId: "liq8cp7u",
+    dataset: "production",
+    useCdn: false
+  });
+  const builder = imageUrlBuilder(client)
+  
     return (
         <>
 
@@ -136,4 +153,20 @@ const Hero = () => {
     )
 }
 
-export default Hero
+// export default Hero
+
+
+export const  getServerSideProps  = async(context)=>{
+  const client =createClient({
+    projectId: "liq8cp7u",
+    dataset: "production",
+    useCdn: false
+
+  });
+  
+  return {
+    props:{
+      featuredBlogs
+    }
+  }
+}
