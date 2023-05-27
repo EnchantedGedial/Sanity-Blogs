@@ -32,15 +32,15 @@ export default function Home({blogs,featuredBlogs}) {
       <Script src="/assets/js/main.js"></Script>
       
    
-      <Hero/>
+      <Hero featuredBlogs={featuredBlogs}/>
       <Category/>
-      <RecentPost blogs={blogs}/>
-      <RecentPost blogs={blogs}/>
-      <RecentPost blogs={blogs}/>
-      <RecentPost blogs={blogs}/>
+      <RecentPost blogs={blogs} category={"Productivity" }/>
+      <RecentPost blogs={blogs} category={"Time Management" }/>
+      <RecentPost blogs={blogs} category={"Self Help" }/>
+      <RecentPost blogs={blogs} category={"Study Hacks" }/>
       <NewsLetter/>
-      <RecentPost blogs={blogs}/>
-      <RecentPost blogs={blogs}/>
+      <RecentPost blogs={blogs} category={"Books" }/>
+      <RecentPost blogs={blogs} category={"Mental Health" }/>
       
     
 

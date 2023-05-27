@@ -12,12 +12,7 @@ import Link from 'next/link'
 
 
 export default function Hero  ({featuredBlogs}){
-  const client = createClient({
-    projectId: "liq8cp7u",
-    dataset: "production",
-    useCdn: false
-  });
-  const builder = imageUrlBuilder(client)
+  
   
     return (
         <>
@@ -34,7 +29,8 @@ export default function Hero  ({featuredBlogs}){
                                                 <span className="flex-shrink-0 w-2 h-2 uppercase rounded-full dark:bg-violet-400"></span>
                                                 <span className="text-xs font-bold tracking-wider uppercase">Leatest</span>
                                               </h3>
-                                              <Link rel="noopener noreferrer" href='/' className="font-serif hover:underline">Donec sed elit quis odio mollis dignissim eget et nulla.</Link>
+                                              {console.log(featuredBlogs[0])}
+                                              <Link rel="noopener noreferrer" href={`blog/${featuredBlogs[0].slug.current}`} className="font-serif hover:underline">{featuredBlogs[0].title}</Link>
                                               
                                             </div>
                                             <div className="flex flex-col mt-4">
@@ -42,7 +38,7 @@ export default function Hero  ({featuredBlogs}){
                                                 <span className="flex-shrink-0 w-2 h-2 uppercase rounded-full dark:bg-violet-400"></span>
                                                 <span className="text-xs font-bold tracking-wider uppercase">Trending</span>
                                               </h3>
-                                              <Link rel="noopener noreferrer" href='/' className="font-serif hover:underline">Ut fermentum nunc quis ipsum laoreet condimentum.</Link>
+                                              <Link rel="noopener noreferrer" href='/' className="font-serif hover:underline">{featuredBlogs[1].title}</Link>
                                               
                                             </div>
                                             <div className="flex flex-col mt-4 space-y-2">
@@ -50,7 +46,7 @@ export default function Hero  ({featuredBlogs}){
                                                 <span className="flex-shrink-0 w-2 h-2 uppercase rounded-full dark:bg-violet-400"></span>
                                                 <span className="text-xs font-bold tracking-wider uppercase">Liked</span>
                                               </h3>
-                                              <Link rel="noopener noreferrer" href='/' className="font-serif hover:underline">Nunc nec ipsum lobortis, pulvinar neque sed.</Link>
+                                              <Link rel="noopener noreferrer" href='/' className="font-serif hover:underline">{featuredBlogs[2].title}</Link>
                                               
                                             </div>
                                             <div className="flex flex-col mt-4 space-y-2">
@@ -58,7 +54,7 @@ export default function Hero  ({featuredBlogs}){
                                                 <span className="flex-shrink-0 w-2 h-2 uppercase rounded-full dark:bg-violet-400"></span>
                                                 <span className="text-xs font-bold tracking-wider uppercase">Liked</span>
                                               </h3>
-                                              <Link rel="noopener noreferrer" href='/' className="font-serif hover:underline">Nunc nec ipsum lobortis, pulvinar neque sed.</Link>
+                                              <Link rel="noopener noreferrer" href='/' className="font-serif hover:underline">{featuredBlogs[3].title}</Link>
                                               
                                             </div>
                                             <div className="flex flex-col mt-4 space-y-2">
@@ -66,7 +62,7 @@ export default function Hero  ({featuredBlogs}){
                                                 <span className="flex-shrink-0 w-2 h-2 uppercase rounded-full dark:bg-violet-400"></span>
                                                 <span className="text-xs font-bold tracking-wider uppercase">Liked</span>
                                               </h3>
-                                              <Link rel="noopener noreferrer" href='/' className="font-serif hover:underline">Nunc nec ipsum lobortis, pulvinar neque sed.</Link>
+                                              <Link rel="noopener noreferrer" href='/' className="font-serif hover:underline">{featuredBlogs[4].title}</Link>
                                               
                                             </div>
                                            
@@ -90,13 +86,13 @@ export default function Hero  ({featuredBlogs}){
 
 
                             
-                            <div className="relative flex col-span-12 bg-center bg-no-repeat bg-cover dark:bg-gray-500 xl:col-span-6 lg:col-span-5 md:col-span-9 min-h-96" style={{backgroundImage: `url(https://source.unsplash.com/random/768x620?9)`}} >
+                            <div className="relative flex col-span-12 bg-center bg-no-repeat bg-cover dark:bg-gray-500 xl:col-span-6 lg:col-span-5 md:col-span-9 min-h-96" style={{backgroundImage: `url(https://source.unsplash.com/random/768x620?overthinking)`}} >
                               <span className="absolute px-1 pb-2 text-xs font-bold uppercase border-b-2 left-6 top-6 dark:border-violet-400 dark:text-gray-100">Trending</span>
 
 
                               <Link href='/' className="flex flex-col items-center justify-end p-6 text-center sm:p-8 group dark:via-transparent flex-grow-1 bg-gradient-to-b dark:from-gray-900 dark:to-gray-900">
                                     <h1>
-                                      <Link rel="noopener noreferrer" href='/' className="font-serif text-2xl font-semibold group-hover:underline dark:text-gray-100">Morbi mattis justo est, ac consectetur dui eleifend vitae. Donec venenatis?</Link>
+                                      <div rel="noopener noreferrer" className="font-serif text-2xl font-semibold group-hover:underline dark:text-gray-100">{featuredBlogs[5].title}</div>
                                     </h1>
                               </Link>
                             </div>
@@ -118,7 +114,7 @@ export default function Hero  ({featuredBlogs}){
                                       <div className="flex pt-0 px-1 py-4">
                                         <img alt="" className="flex-shrink-0 object-cover w-20 h-20 mr-4 dark:bg-gray-500" style={{backgroundImage: `url(https://source.unsplash.com/random/245x325?1)`}} />
                                         <div className="flex flex-col flex-grow">
-                                          <a rel="noopener noreferrer" href="#" className="font-serif hover:underline">Aenean ac tristique lorem, ut mollis dui.</a>
+                                          <a rel="noopener noreferrer" href="#" className="font-serif hover:underline">{featuredBlogs[6].title}</a>
                                           <p className="mt-auto text-xs dark:text-gray-400">5 minutes ago
                                             <a rel="noopener noreferrer" href="#" className="block dark:text-blue-400 lg:ml-2 lg:inline hover:underline">Politics</a>
                                           </p>
@@ -127,7 +123,7 @@ export default function Hero  ({featuredBlogs}){
                                       <div className="flex px-1 py-4">
                                         <img alt="" className="flex-shrink-0 object-cover w-20 h-20 mr-4 dark:bg-gray-500" src="https://source.unsplash.com/random/245x325" />
                                         <div className="flex flex-col flex-grow">
-                                          <a rel="noopener noreferrer" href="#" className="font-serif hover:underline">Nulla consectetur efficitur.</a>
+                                          <a rel="noopener noreferrer" href="#" className="font-serif hover:underline">{featuredBlogs[7].title}</a>
                                           <p className="mt-auto text-xs dark:text-gray-400">14 minutes ago
                                             <a rel="noopener noreferrer" href="#" className="block dark:text-blue-400 lg:ml-2 lg:inline hover:underline">Sports</a>
                                           </p>
@@ -136,16 +132,16 @@ export default function Hero  ({featuredBlogs}){
                                       <div className="flex px-1 py-4">
                                         <img alt="" className="flex-shrink-0 object-cover w-20 h-20 mr-4 dark:bg-gray-500" src="https://source.unsplash.com/random/246x326" />
                                         <div className="flex flex-col flex-grow">
-                                          <a rel="noopener noreferrer" href="#" className="font-serif hover:underline">Vitae semper augue purus tincidunt libero.</a>
+                                          <a rel="noopener noreferrer" href="#" className="font-serif hover:underline">{featuredBlogs[8].title}</a>
                                           <p className="mt-auto text-xs dark:text-gray-400">22 minutes ago
                                             <a rel="noopener noreferrer" href="#" className="block dark:text-blue-400 lg:ml-2 lg:inline hover:underline">World</a>
                                           </p>
                                         </div>
                                       </div>
                                       <div className="flex px-1 py-4">
-                                        <img alt="" className="flex-shrink-0 object-cover w-20 h-20 mr-4 dark:bg-gray-500" src="https://source.unsplash.com/random/247x327" />
+                                        <Image alt="" className="flex-shrink-0 object-cover w-20 h-20 mr-4 dark:bg-gray-500" src={'../../Assets/rocket.svg'}  width={200} height={200}/>
                                         <div className="flex flex-col flex-grow">
-                                          <a rel="noopener noreferrer" href="#" className="font-serif hover:underline">Suspendisse potenti.</a>
+                                          <a rel="noopener noreferrer" href="#" className="font-serif hover:underline">{featuredBlogs[9].title}</a>
                                           <p className="mt-auto text-xs dark:text-gray-400">37 minutes ago
                                             <a rel="noopener noreferrer" href="#" className="block dark:text-blue-400 lg:ml-2 lg:inline hover:underline">Business</a>
                                           </p>
@@ -162,20 +158,4 @@ export default function Hero  ({featuredBlogs}){
     )
 }
 
-// export default Hero
 
-
-export const  getServerSideProps  = async(context)=>{
-  const client =createClient({
-    projectId: "liq8cp7u",
-    dataset: "production",
-    useCdn: false
-
-  });
-  
-  return {
-    props:{
-      featuredBlogs
-    }
-  }
-}

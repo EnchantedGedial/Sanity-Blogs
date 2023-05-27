@@ -1,11 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 import imageUrlBuilder from '@sanity/image-url'
-const RecentPost = ({blogs}) => {
+const RecentPost = ({blogs,category}) => {
     return (
     <>
     <div className='max-w-7xl mt-5 m-auto pt-10'>
-        <h1 className='text-3xl mt-5 font-bold'>Categories</h1>
+        <h1 className='text-3xl mt-5 font-bold'>{category}</h1>
     </div>
             <div className="mx-auto grid  grid-cols-1 gap-6 pt-12 sm:w-3/4  lg:grid-cols-3 xl:gap-10 w-11/12"   >
                       {blogs.map((items) => {

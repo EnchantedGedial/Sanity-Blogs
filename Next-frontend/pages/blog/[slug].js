@@ -14,7 +14,7 @@ const Post = ({blogs}) => {
           <div className="">
             <h1
               className="pt-5 font-body text-3xl font-semibold text-primary sm:text-4xl md:text-5xl xl:text-6xl">
-              {blogs.title}
+              {blogs?.title}
             </h1>
             <div className="flex items-center pt-5 md:pt-10">
               <div>
@@ -72,9 +72,13 @@ export  const  getServerSideProps = async(context) =>{
   });
   const query = `*[_type == "blog" && slug.current == '${slug}'][0]`;
   const blogs = await client.fetch(query);
-  return {
+  
+  const query1 = `*[_type == "featuredBlogs"]`;
+  const featuredBlogs = await client.fetch(query1);
+ return {
     props: {
-      blogs
+      blogs,featuredBlogs
+    
     }
   }
 }
