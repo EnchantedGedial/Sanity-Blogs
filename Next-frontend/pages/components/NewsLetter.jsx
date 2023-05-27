@@ -1,69 +1,58 @@
 import React from 'react'
+import Link from 'next/link';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const NewsLetter = () => {
-    
+
+
+  const notify = () =>{toast.success('Thank you for Subscribing', {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "colored",
+    });}
 
         return (
-          <div className="relative">
-            <div className="absolute inset-x-0 bottom-0">
-              <svg
-                viewBox="0 0 224 12"
-                fill="currentColor"
-                className="w-full -mb-1 text-black"
-                preserveAspectRatio="none"
-              >
-                <path d="M0,0 C48.8902582,6.27314026 86.2235915,9.40971039 112,9.40971039 C137.776408,9.40971039 175.109742,6.27314026 224,0 L224,12.0441132 L0,12.0441132 L0,0 Z" />
-              </svg>
-            </div>
-            <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-              <div className="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-2xl sm:text-center">
-                <h2 className="mb-6 font-sans text-3xl font-bold tracking-tight text-black sm:text-4xl sm:leading-none">
-               Join our News Letter
-                  <br className="hidden md:block" />
-                  {' '}
-                  <span className="relative inline-block">
-                     {' '}
-                    <div className="w-full h-3 -mt-3 bg-deep-purple-accent-400" />
-                  </span>
-                </h2>
-                <p className="mb-6 text-base font-thin tracking-wide text-black-300 md:text-lg">
-                And over at Sunday Snippets - my weekly newsletter - I share actionable productivity tips and practical life advice. Sign up below to join a growing community of more than 300,000 friendly readers.
-                </p>
-                <form className="flex flex-col items-center w-full mb-4 md:flex-row md:px-16">
-                  <input
-                    placeholder="Email"
-                    required
-                    type="text"
-                    className="flex-grow w-full h-12 px-4 mb-3 text-black transition duration-200 bg-transparent border-2 border-gray-400 rounded appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-200 focus:outline-none focus:shadow-outline"
-                  />
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md md:w-auto bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                  >
-                    Subscribe
-                  </button>
-                </form>
-                <p className="max-w-md mb-10 text-xs font-thin tracking-wide text-gray-500 sm:text-sm sm:mx-auto md:mb-16">
-                  {}
-                </p>
-                <a
-                  href="/"
-                  aria-label="Scroll down"
-                  className="flex items-center justify-center w-10 h-10 mx-auto text-black duration-300 transform border border-gray-400 rounded-full hover:text-teal-accent-400 hover:border-teal-accent-400 hover:shadow hover:scale-110"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="currentColor"
-                  >
-                    <path d="M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z" />
-                  </svg>
-                </a>
+          <section class="bg-white dark:bg-white w-9/12 m-auto">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <div class="mx-auto max-w-screen-md sm:text-center">
+          <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl dark:text-black">Sign up for our newsletter</h2>
+          <p class="mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl dark:text-black">Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.</p>
+          <form action="#">
+              <div class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
+                  <div class="relative w-full">
+                      <label for="email" class="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email address</label>
+                      <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                          <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                      </div>
+                      <input class="block p-3 pl-10 w-full text-sm text-black bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="          Enter your email" type="email" id="email" required=""/>
+                  </div>
+                  <div>
+                      <button type='button' class="py-3 px-5 w-full text-sm font-medium text-center text-black rounded-lg border cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" onClick={notify} >Subscribe</button>
+                  </div>
+                  <ToastContainer
+position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="colored"
+/>
               </div>
-            </div>
-          </div>
+              <div class="mx-auto max-w-screen-sm text-sm text-left text-black newsletter-form-footer dark:text-gray-300">We care about the protection of your data. <Link href="/" class="font-medium text-primary-600 dark:text-primary-500 hover:underline">Read our Privacy Policy</Link>.</div>
+          </form>
+      </div>
+  </div>
+</section>
         );
       };
      

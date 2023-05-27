@@ -1,6 +1,10 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/_error": "pages/_error.js",
+  "/": "pages/index.js",
+  "/categories/Books": "pages/categories/Books.js",
+  "/components/About": "pages/components/About.js",
+  "/categories/StudyHacks": "pages/categories/StudyHacks.js",
+  "/categories/SelfHelp": "pages/categories/SelfHelp.js"
 }
