@@ -15,6 +15,7 @@ import NewsLetter from './components/NewsLetter';
 
 import Footer from './components/Footer';
 import Category from './components/Category';
+import BackToTop from './components/BackToTop';
 
 
 export default function Home({blogs,featuredBlogs}) {
@@ -42,8 +43,7 @@ export default function Home({blogs,featuredBlogs}) {
       <RecentPost blogs={blogs} category={"Books" }/>
       <RecentPost blogs={blogs} category={"Mental Health" }/>
       
-    
-
+   
       
    
 
