@@ -6,23 +6,32 @@ const Popups = () => {
 
     const handlePopUp=()=>{
         SetVisiable(true)
+        
 
     }
 
 
     const windowHeight=()=>{
-        let heightToShow=400;
+        let heightToShow=1500;
         const windowHeight = document.body.scrollTop || document.documentElement.scrollTop;
 
         if(heightToShow <= windowHeight){
-            SetVisiable(true)
-        }else(SetVisiable(false))
+            SetVisiable(true);
+            // document.body.style.overflowY ="hidden";
+        }else {
+            SetVisiable(false);
+            // document.body.style.overflowY ="visible ";
+        }
         
     }
 
     const OnlyOncePopUp=()=>{
         if(Click >0){
             SetVisiable(false)
+            // document.body.style.overflowY ="visiable";
+        }else{
+            
+            // document.body.style.overflowY ="hidden";
         }
     }
     useEffect(() => {
@@ -35,20 +44,26 @@ const Popups = () => {
         window.addEventListener("scroll",OnlyOncePopUp)
       
     }, [Click])
+    // const styles = { 
+    //     transform: `translate(-50%, ${y}px)` 
+    // };
     
   return (
     <>
     <button onClick={handlePopUp}>Fucking U</button>
     <div className='flex m-auto  items-center content-center justify-center'>
 
-    {visiable && (<div className='w-60 h-60 bg-gray-200 fixed flex top-15'>
+    {visiable && (<div className="container">
+    <div className='z-10 w-50 h-50 bg-gray-200 fixed flex items-center content-center justify-center text-center rounded-lg' style={{ top:"50% ",left:"50%",transform: "translate(-50%, -50%)"}}>
         <div className='flex items-center content-center justify-center text-center'>
 
         This is Fucking Looks good
         </div>
-        <AiFillCloseCircle  className='relative top-1 -right-4 text-3xl text-indigo-500' onClick={()=>{SetVisiable(false) 
-            SetClick(Click +1)}}/>
+        
 
+    <AiFillCloseCircle  className='relative  top-0 right-0 text-3xl text-indigo-500' onClick={()=>{SetVisiable(false) 
+            SetClick(Click +1)}}/>
+    </div>
     </div>)}
     </div>
     
