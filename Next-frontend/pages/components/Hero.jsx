@@ -6,6 +6,8 @@ import { createClient } from "next-sanity";
 import Script from "next/script"
 import imageUrlBuilder from '@sanity/image-url'
 import Link from 'next/link'
+import BackToTop from './BackToTop';
+import Popups from './Popups';
 
 
 
@@ -18,6 +20,7 @@ export default function Hero  ({featuredBlogs}){
         <>
 
         {/* <hr className='' /> */}
+        <Popups/>
 
     <section className="px-5 dark:bg-white-800 dark:text-black-100">
               <div className="container grid grid-cols-12 mx-auto gap-y-6 md:gap-10">
@@ -30,7 +33,7 @@ export default function Hero  ({featuredBlogs}){
                                                 <span className="text-xs font-bold tracking-wider uppercase">Leatest</span>
                                               </h3>
                                               {console.log(featuredBlogs[0])}
-                                              <Link rel="noopener noreferrer" href={`blog/${featuredBlogs[0].slug.current}`} className="font-serif hover:underline">{featuredBlogs[0].title}</Link>
+                                              <Link rel="noopener noreferrer" href={`featuredblog/${featuredBlogs[0].slug.current}`} className="font-serif hover:underline">{featuredBlogs[0].title}</Link>
                                               
                                             </div>
                                             <div className="flex flex-col mt-4">
@@ -154,7 +157,8 @@ export default function Hero  ({featuredBlogs}){
               </div>
     </section>
 
-        </>
+
+      </>
     )
 }
 
