@@ -50,7 +50,7 @@ const Popups = () => {
     
   return (
     <>
-    <button onClick={handlePopUp}>Fucking U</button>
+    {/* <button onClick={handlePopUp}>Fucking U</button> */}
     <div className='flex m-auto  items-center content-center justify-center'>
 
     {visiable && (<div className="container">
@@ -61,9 +61,18 @@ const Popups = () => {
         </div>
         
 
-    <AiFillCloseCircle  className='relative  top-0 right-0 text-3xl text-indigo-500' onClick={()=>{SetVisiable(false) 
-            SetClick(Click +1)}}/>
-    </div>
+    <AiFillCloseCircle 
+     className='relative  top-30 right-0 text-3xl text-indigo-500' 
+     onClick={()=>{ 
+        SetVisiable(false) 
+        SetClick(Click +1)
+        }}/>
+         </div>
+    
+
+
+   
+     
     </div>)}
     </div>
     

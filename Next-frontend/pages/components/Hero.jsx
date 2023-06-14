@@ -22,7 +22,7 @@ export default function Hero  ({featuredBlogs}){
         {/* <hr className='' /> */}
         <Popups/>
 
-    <section className="px-5 dark:bg-white-800 dark:text-black-100">
+    <section className="px-5 mt-3 dark:bg-white-800 dark:text-black-100">
               <div className="container grid grid-cols-12 mx-auto gap-y-6 md:gap-10">
                 
                             <div className="flex flex-col justify-between col-span-12 py-2 space-y-8 md:space-y-16 md:col-span-3">
