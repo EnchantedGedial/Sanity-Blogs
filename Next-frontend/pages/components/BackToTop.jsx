@@ -27,7 +27,7 @@ const TakeToTop=()=>{
     <>
 {visiable &&(
    <div onClick={handleToTop}>
-<BsFillArrowUpCircleFill className=' text-indigo-400 text-4xl' style={{position:"fixed", bottom:30,right:5}}/>
+<BsFillArrowUpCircleFill className=' transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:text-indigo-600 duration-300 text-indigo-400 text-4xl' style={{position:"fixed", bottom:30,right:5}}/>
     </div> 
 )}
     

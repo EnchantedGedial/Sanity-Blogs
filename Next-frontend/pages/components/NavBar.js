@@ -1,11 +1,13 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { CgProfile } from 'react-icons/cg';
 import { GiCancel } from 'react-icons/gi';
 import { GoSignOut } from 'react-icons/go';
 import { useSession, signIn, signOut } from "next-auth/react"
-import UserDataPopup from './UserDataPopup';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const NavBar = () => {
   const { data: session } = useSession();
   const toggleCart = () => {
@@ -20,7 +22,22 @@ const NavBar = () => {
 
   }
   const ref = useRef();
+//   const [loggedIn, setLoggedIn] = useState(false);
+//   const [name, setName] = useState('');
+//   useEffect(()=>{
 
+
+//   toast.success(`Welcome back ${name}`, {
+//     position: "top-center",
+//     autoClose: 5000,
+//     hideProgressBar: false,
+//     closeOnClick: true,
+//     pauseOnHover: true,
+//     draggable: true,
+//     progress: undefined,
+//     theme: "light",
+//   });
+// },[loggedIn])
 
   return (
     <>
@@ -65,51 +82,64 @@ const NavBar = () => {
                 <Link href='../components/About' class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">AboutUs</Link>
               </div>
 
-             <div className='flex'>
+              <div className='flex'>
 
-         
+                {/* {!loggedIn && <ToastContainer
+                  position="top-center"
+                  autoClose={5000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                  theme="light"
+                />} */}
 
                 {session ? (<>
-             
-
-               
-<div className='flex  '>
 
 
 
-                  <div onClick={toggleCart} class="block px-3 pt-1 pl-3 pr-4 text-2xl mt-1 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" ><CgProfile /></div>
-                  <button className='m-2 text-black text-2xl  p-1' onClick={() => signOut()}><GoSignOut className=' hover:text-red-500'/></button>
+                  <div className='flex  '>
+
+
+
+                    <div onClick={toggleCart} class="block px-3 pt-1 pl-3 pr-4 text-2xl mt-1 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-black md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" ><CgProfile /></div>
+                    <button className='m-2 text-black text-2xl  p-1' onClick={() => signOut()}><GoSignOut className=' hover:text-red-500' /></button>
                   </div>
-                <div>
+                  <div>
 
 
-                  <div ref={ref} className="sidebar absolute top-0 right-0 bg-indigo-100 px-10 py-14 transform transition-transform translate-x-full h-full w-80">
-                    
-                       
-                    <div className='font-bold text-xl text-center '>Signed in as {session?.user?.name}  </div>
-                    <span onClick={toggleCart} className="absolute top-2 right-2 cursor-pointer text-2xl text-indigo-500 hover:text-indigo-300"> <GiCancel/></span>
-                   
+                    <div ref={ref} className="sidebar absolute top-0 right-0 bg-indigo-100 px-10 py-14 transform transition-transform translate-x-full h-full w-80">
+
+
+                      <div className='font-bold text-xl text-center '>Signed in as {session?.user?.name}  </div>
+                      {/* {setLoggedIn(true)}
+                      {setName(session?.user?.name)} */}
+                      <span onClick={toggleCart} className="absolute top-2 right-2 cursor-pointer text-2xl text-indigo-500 hover:text-indigo-300"> <GiCancel /></span>
+
                       <li className='text-center'>
                         <div className="item flex my-3">
-                      
-                          <div className='w-2/3 m-auto'><img src= {session?.user?.image}  alt="" /></div>
-                          
+
+                          <div className='w-2/3 m-auto'><img src={session?.user?.image} alt="" /></div>
+
                         </div>
-                        
+
 
                       </li>
-                   
-                    <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg" onClick={() => signOut()}>Sign out</button>
-                   
-                  </div>
-                  </div>
-              </>) : (<>
 
-                <button className='m-2 bg-green-600 text-white p-1' onClick={() => signIn()}>Sign in</button>
-              </>)}
+                      <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg" onClick={() => signOut()}>Sign out</button>
 
-          </div>
-            </ul> 
+                    </div>
+                  </div>
+                </>) : (<>
+
+                  <button className='m-2 bg-green-600 text-white p-1' onClick={() => signIn()}>Sign in</button>
+                </>)}
+
+              </div>
+            </ul>
           </div>
         </div>
       </nav>

@@ -18,10 +18,7 @@ export default function Blogs({ blogs, profile }) {
     useCdn: false
   });
   const builder = imageUrlBuilder(client)
-  useEffect(() => {
-    console.log("gaga")
-    // console.log(jay)
-  }, [])
+ 
 
 
   return (
