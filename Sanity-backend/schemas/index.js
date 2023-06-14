@@ -5,6 +5,7 @@ import FeaturedBlogs from './FeaturedBlogs.js'
 import Productivity from './Productivity.js'
 import TimeManagement from './TimeManagement.js'
 import SelfHelp from './SelfHelp.js'
+import StudyHacks from './StudyHacks.js'
 
 
-export const schemaTypes = [Blog,Category,FeaturedBlogs,Productivity,TimeManagement,SelfHelp]
+export const schemaTypes = [Blog,Category,FeaturedBlogs,Productivity,TimeManagement,SelfHelp,StudyHacks]
