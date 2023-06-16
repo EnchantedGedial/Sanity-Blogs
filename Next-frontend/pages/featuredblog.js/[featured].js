@@ -72,7 +72,7 @@ export  const  getServerSideProps = async(context) =>{
   });
  
   
-  const query = `*[_type == "featuredBlogs" && slug.current == '${featured}'][0]`;
+  const query = `*[_type == "FeaturedBlogs" && slug.current == '${featured}'][0]`;
   const featuredBlogs = await client.fetch(query);
  return {
     props: {

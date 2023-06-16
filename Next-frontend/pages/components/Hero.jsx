@@ -32,8 +32,8 @@ export default function Hero({ featuredBlogs }) {
                   <span className="flex-shrink-0 w-2 h-2 uppercase rounded-full dark:bg-violet-400"></span>
                   <span className="text-xs font-bold tracking-wider uppercase">Leatest</span>
                 </h3>
-                {console.log(featuredBlogs[0])}
-                <Link rel="noopener noreferrer" href={`featuredblog/${featuredBlogs[0].slug.current}`} className="font-serif hover:underline">{featuredBlogs[0].title}</Link>
+              
+                <Link rel="noopener noreferrer" href={`/featuredblog/${featuredBlogs[0].slug.current}`} className="font-serif hover:underline">{featuredBlogs[0].title}</Link>
 
               </div>
               <div className="flex flex-col mt-4">

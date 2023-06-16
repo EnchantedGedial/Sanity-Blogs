@@ -28,7 +28,7 @@ export default function Blogs({ blogs, profile }) {
 
            <div className="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10">
             {blogs.map((items) => {
-              return <Link key={items.slug} href={"blog/" + items.slug.current}  className="shadow">
+              return <Link key={items.slug} href={`/blog/${items.slug.current}`}  className="shadow">
                 <div>
                 <div style={{ "backgroundImage": `url(${builder.image(items.poster).width(200).url()})` }}
                   className="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72">

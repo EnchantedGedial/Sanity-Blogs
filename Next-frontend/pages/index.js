@@ -12,7 +12,7 @@ import NewsLetter from './components/NewsLetter';
 import Category from './components/Category';
 
 
-export default function Home({blogs,featuredBlogs,Productivity,TimeManagement}) {
+export default function Home({blogs,featuredBlogs,Productivity,TimeManagement,SelfHelp,StudyHacks,Books}) {
   const client = createClient({
     projectId: "liq8cp7u",
     dataset: "production",
@@ -29,13 +29,13 @@ export default function Home({blogs,featuredBlogs,Productivity,TimeManagement}) 
    
       <Hero featuredBlogs={featuredBlogs}/>
       <Category/>
-      <RecentPost blogs={Productivity.slice(0,3)} category={"Productivity" }/>
-     <RecentPost blogs={TimeManagement?.slice(0,3)} category={"Time Management" }/>
-      <RecentPost blogs={blogs} category={"Self Help" }/>
-      <RecentPost blogs={blogs} category={"Study Hacks" }/>
+      <RecentPost blogs={Productivity.slice(0,3)} img_type={"work"}  category={"Productivity" }/>
+     <RecentPost blogs={TimeManagement?.slice(0,3)} img_type={"work"} category={"Time Management" }/>
+      <RecentPost blogs={SelfHelp} img_type={"work"} category={"Self Help" }/>
+      <RecentPost blogs={StudyHacks} img_type={"study"} category={"Study Hacks" }/>
       <NewsLetter/>
-      <RecentPost blogs={blogs} category={"Books" }/>
-      <RecentPost blogs={blogs} category={"Mental Health" }/>
+      <RecentPost blogs={Books} img_type={"books"} category={"Books" }/>
+      <RecentPost blogs={blogs} img_type={"work"} category={"Mental Health" }/>
        
       
    
@@ -71,10 +71,18 @@ export const  getServerSideProps = async(context)=> {
 
   const queryforTimeManagement = `*[_type == "TimeManagement"]`;
   const TimeManagement = await client.fetch(queryforTimeManagement);
+
+  const queryforSelfHelp = `*[_type == "SelfHelp"]`;
+  const SelfHelp = await client.fetch(queryforSelfHelp);
+
+  const queryforStudyHacks = `*[_type == "StudyHacks"]`;
+  const StudyHacks = await client.fetch(queryforStudyHacks);
+  const queryforBooks = `*[_type == "Books"]`;
+  const Books = await client.fetch(queryforBooks);
   
  return {
     props: {
-      blogs,featuredBlogs,Productivity,TimeManagement
+      blogs,featuredBlogs,Productivity,TimeManagement,SelfHelp,StudyHacks,Books
     
     }
   }

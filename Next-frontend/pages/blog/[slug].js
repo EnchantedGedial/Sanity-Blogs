@@ -30,7 +30,7 @@ const Post = ({blogs}) => {
             </div>
           </div>
           <div className="prose max-w-none pt-8">
-            <PortableText content={blogs.content}projectId="liq8cp7u"dataset="production" serializers={{
+            <PortableText content={blogs?.content}projectId="liq8cp7u"dataset="production" serializers={{
                 h1: (props) => <h1 style={{ color: "red" }} {...props} />,
                 li: ({ children }) => <li className="special-list-item">{children}</li>,
               }}
