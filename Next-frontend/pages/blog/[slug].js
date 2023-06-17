@@ -2,12 +2,11 @@
 import { useRouter } from 'next/router'
 import { createClient } from "next-sanity";
 import PortableText from "react-portable-text"
+import { CgProfile } from 'react-icons/cg';
 
 const Post = ({blogs}) => {
     const router = useRouter()
    return <>
-   
-
     <div>
       <div className="container py-6 md:py-10">
         <div className="mx-auto max-w-4xl">
@@ -17,11 +16,7 @@ const Post = ({blogs}) => {
               {blogs?.title}
             </h1>
             <div className="flex items-center pt-5 md:pt-10">
-              <div>
-                <img src="/assets/img/blog-author.jpg"
-                  className="h-20 w-20 rounded-full border-2 border-grey-70 shadow"
-                  alt="author image" />
-              </div>
+              <div><CgProfile  className="h-20 w-20 rounded-full border-2 border-grey-70 shadow"/></div>
               <div className="pl-5">
                 <span className="block font-body text-xl font-bold text-grey-10">By Christy Smith</span>
                 <span className="block pt-1 font-body text-xl font-bold text-grey-30">February 27,
@@ -29,6 +24,7 @@ const Post = ({blogs}) => {
               </div>
             </div>
           </div>
+          <div className="flex">
           <div className="prose max-w-none pt-8">
             <PortableText content={blogs?.content}projectId="liq8cp7u"dataset="production" serializers={{
                 h1: (props) => <h1 style={{ color: "red" }} {...props} />,
@@ -37,25 +33,13 @@ const Post = ({blogs}) => {
             />
 
           </div>
-          <div className="mt-10 flex justify-between border-t border-lila py-12">
-            <a href="/" className="flex items-center">
-              <i className="bx bx-left-arrow-alt text-2xl text-primary"></i>
-              <span
-                className="block pl-2 font-body text-lg font-bold uppercase text-primary md:pl-5">Previous
-                Post</span>
-            </a>
-            <a href="/" className="flex items-center">
-              <span className="block pr-2 font-body text-lg font-bold uppercase text-primary md:pr-5">Next
-                Post</span>
-              <i className="bx bx-right-arrow-alt text-2xl text-primary"></i>
-            </a>
+          
           </div>
         
         </div>
       </div>
     </div>
 
-  
   </> 
 
 }
