@@ -29,13 +29,13 @@ export default function Home({blogs,featuredBlogs,Productivity,TimeManagement,Se
    
       <Hero featuredBlogs={featuredBlogs}/>
       <Category/>
-      <RecentPost blogs={Productivity.slice(0,3)} img_type={"work"}  category={"Productivity" }/>
-     <RecentPost blogs={TimeManagement?.slice(0,3)} img_type={"work"} category={"Time Management" }/>
-      <RecentPost blogs={SelfHelp} img_type={"work"} category={"Self Help" }/>
-      <RecentPost blogs={StudyHacks} img_type={"study"} category={"Study Hacks" }/>
+      <RecentPost  blogs={Productivity.slice(0,3)} img_type={"work"}  category={"Productivity" } category_sulg={"Productivity" }/>
+     <RecentPost blogs={TimeManagement?.slice(0,3)} img_type={"work"} category={"Time Management" } category_sulg={"Time Management" }/>
+      <RecentPost blogs={SelfHelp} img_type={"work"} category={"Self Help" } category_slug={"SelfHelp" }/>
+      <RecentPost blogs={StudyHacks} img_type={"study"} category={"Study Hacks" }  category_slug={"StudyHacks" }/>
       <NewsLetter/>
-      <RecentPost blogs={Books} img_type={"books"} category={"Books" }/>
-      <RecentPost blogs={blogs} img_type={"work"} category={"Mental Health" }/>
+      <RecentPost blogs={Books} img_type={"books"} category={"Books" } category_slug={"Books" }/>
+      <RecentPost blogs={blogs} img_type={"work"} category={"Mental Health" } category_slug={"dipression" }/>
        
       
    
@@ -77,6 +77,7 @@ export const  getServerSideProps = async(context)=> {
 
   const queryforStudyHacks = `*[_type == "StudyHacks"]`;
   const StudyHacks = await client.fetch(queryforStudyHacks);
+
   const queryforBooks = `*[_type == "Books"]`;
   const Books = await client.fetch(queryforBooks);
   
