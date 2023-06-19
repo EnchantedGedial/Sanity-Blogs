@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { CgProfile } from 'react-icons/cg';
 import { GiCancel } from 'react-icons/gi';
 import { GoSignOut } from 'react-icons/go';
 import { useSession, signIn, signOut } from "next-auth/react"
-import { ToastContainer, toast } from 'react-toastify';
+import logo from '../../Assets/FIRE Blogs small.png'
 import 'react-toastify/dist/ReactToastify.css';
 
 const NavBar = () => {
@@ -46,15 +46,15 @@ const NavBar = () => {
 
 
       <nav class="bg-beige" >
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto pt-0 mt-0">
+        <div class=" w-11/12 m-auto flex flex-wrap items-center justify-between  pt-0 mt-0">
 
           <Link href='/' class="flex items-center">
-            <Image src={'https://cdn.thecodehelp.in/qdo970k2vrxj8kefd1zt_9520ff468a.svg'} width={200} height={800} class="mr-3 pt-4" alt="iblogs Logo" />
+            <Image src={logo} width={240} height={840} class="mr-3 pt-4" alt="iblogs Logo" />
 
           </Link>
 
           <div class="hidden w-full md:block md:w-auto color" id="navbar-multi-level">
-            <ul class="flex flex-col font-medium p-4 md:p-0 mt-4  md:flex-row md:space-x-8 md:mt-0 text-black">
+            <ul class="flex flex-col font-medium p-4 mt-4  md:flex-row md:space-x-8 md:mt-4 text-black">
               <div>
                 <Link href='/' class="block py-2 pl-3 pr-4 dark:text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</Link>
               </div>

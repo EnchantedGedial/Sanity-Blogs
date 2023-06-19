@@ -3,7 +3,7 @@
 export default {
     name: 'featuredBlogs',
     type: 'document',
-      title: 'FeaturedBlogs',
+      title: 'featuredBlogs',
     fields: [
       {
         name: 'title',

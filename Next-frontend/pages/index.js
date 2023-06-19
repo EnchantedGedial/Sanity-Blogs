@@ -10,7 +10,7 @@ import Hero from './components/Hero';
 import RecentPost from './components/RecentPost';
 import NewsLetter from './components/NewsLetter';
 import Category from './components/Category';
-import logo from '../Assets/FIRE STONE 1.png'
+import logoSmall from '../Assets/FIRE Blogs small.png'
 
 
 export default function Home({blogs,featuredBlogs,Productivity,TimeManagement,SelfHelp,StudyHacks,Books}) {
@@ -27,7 +27,7 @@ export default function Home({blogs,featuredBlogs,Productivity,TimeManagement,Se
     <>
     <Head>
         <title>iBlogs</title>
-        <meta property="og:image" content={logo} />
+        <meta property="og:image" content={logoSmall} />
         <meta property="og:description" content="A full description of the page."/>
 
 <meta property="og:image:width" content="1200"/>
@@ -40,7 +40,7 @@ export default function Home({blogs,featuredBlogs,Productivity,TimeManagement,Se
       <Hero featuredBlogs={featuredBlogs}/>
       <Category/>
       <RecentPost  blogs={Productivity.slice(0,3)} img_type={"work"}  category={"Productivity" } category_sulg={"Productivity" }/>
-     <RecentPost blogs={TimeManagement?.slice(0,3)} img_type={"work"} category={"Time Management" } category_sulg={"Time Management" }/>
+     <RecentPost blogs={TimeManagement?.slice(0,3)} img_type={"work"} category={"TimeManagement" } category_sulg={"TimeManagement" }/>
       <RecentPost blogs={SelfHelp} img_type={"work"} category={"Self Help" } category_slug={"SelfHelp" }/>
       <RecentPost blogs={StudyHacks} img_type={"study"} category={"Study Hacks" }  category_slug={"StudyHacks" }/>
       <NewsLetter/>
@@ -72,8 +72,8 @@ export const  getServerSideProps = async(context)=> {
 
 
 
-  const query1 = `*[_type == "featuredBlogs"]`;
-  const featuredBlogs = await client.fetch(query1);
+  const queryforfeaturedBlogs = `*[_type == "featuredBlogs"]`;
+  const featuredBlogs = await client.fetch(queryforfeaturedBlogs);
 
 
   const queryforProductivity = `*[_type == "Productivity"]`;

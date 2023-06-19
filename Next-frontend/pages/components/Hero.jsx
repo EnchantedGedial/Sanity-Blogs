@@ -89,7 +89,7 @@ export default function Hero({ featuredBlogs }) {
 
 
 
-          <div className="relative flex col-span-12 bg-center bg-no-repeat bg-cover dark:bg-gray-500 xl:col-span-6 lg:col-span-5 md:col-span-9 min-h-96" style={{ backgroundImage: `url(https://source.unsplash.com/random/768x620?overthinking)` }} >
+          <div className="relative flex col-span-12 bg-center bg-no-repeat bg-cover dark:bg-gray-500 xl:col-span-6 lg:col-span-5 md:col-span-9 min-h-96" style={{ backgroundImage: `url(https://source.unsplash.com/random/768x620?sad)` }} >
             <span className="absolute px-1 pb-2 text-xs font-bold uppercase border-b-2 left-6 top-6 dark:border-violet-400 dark:text-gray-100">Trending</span>
 
 

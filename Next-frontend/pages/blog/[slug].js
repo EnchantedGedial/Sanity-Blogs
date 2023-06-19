@@ -59,7 +59,7 @@ const Post = ({blogs}) => {
           
         </div>
 
-        <img src="https://images.unsplash.com/photo-1587614387466-0a72ca909e16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" class="w-full object-cover lg:rounded" style={{height: "28em"}}/>
+        <img src='https://source.unsplash.com/random/768x620?work' class="w-full object-cover lg:rounded" style={{height: "28em"}}/>
       </div>
 
       <div class="flex flex-col lg:flex-row lg:space-x-12">
