@@ -58,7 +58,7 @@ export  const  getServerSideProps = async(context) =>{
     dataset: "production",
     useCdn: false
   });
-  const query = `*[_type == "studyHacks" && slug.current == '${slug}'][0]`;
+  const query = `*[_type == "StudyHacks" && slug.current == '${slug}'][0]`;
   const blogs = await client.fetch(query);
   
  

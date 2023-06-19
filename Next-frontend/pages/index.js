@@ -10,6 +10,7 @@ import Hero from './components/Hero';
 import RecentPost from './components/RecentPost';
 import NewsLetter from './components/NewsLetter';
 import Category from './components/Category';
+import logo from '../Assets/FIRE STONE 1.png'
 
 
 export default function Home({blogs,featuredBlogs,Productivity,TimeManagement,SelfHelp,StudyHacks,Books}) {
@@ -24,6 +25,15 @@ export default function Home({blogs,featuredBlogs,Productivity,TimeManagement,Se
 
   return (
     <>
+    <Head>
+        <title>iBlogs</title>
+        <meta property="og:image" content={logo} />
+        <meta property="og:description" content="A full description of the page."/>
+
+<meta property="og:image:width" content="1200"/>
+
+<meta property="og:image:height" content="630"/>
+      </Head>
       <Script src="/assets/js/main.js"></Script>
       
    

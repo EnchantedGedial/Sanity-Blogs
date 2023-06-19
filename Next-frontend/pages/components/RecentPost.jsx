@@ -12,6 +12,7 @@ const RecentPost = ({blogs,category,img_type,category_slug}) => {
   });
   const builder = imageUrlBuilder(client)
  
+  console.log(category_slug)
     return (
     <>
     <div className='max-w-7xl mt-5 m-auto pt-10'>
@@ -19,7 +20,7 @@ const RecentPost = ({blogs,category,img_type,category_slug}) => {
     </div>
             <div className="mx-auto grid  grid-cols-1 gap-6 pt-12 sm:w-3/4  lg:grid-cols-3 xl:gap-10 w-11/12"   >
                       {blogs?.map((items) => {
-                        return <Link key={items.slug}  href={`/${category_slug}_slug/${items.slug.current}`}  className="shadow">
+                        return <Link key={items.slug}  href={`${category_slug}_slug/${items.slug.current}`}  className="shadow">
                           <div className='rounded-lg'>
                           <div style={{ "backgroundImage": `url(https://source.unsplash.com/random/768x620?${img_type}/${Math.random()})`}}
                           // <div style={{ "backgroundImage": `url(${builder.image(items.poster).width(200).url()})` }}

@@ -18,7 +18,7 @@ const Productivity = () => {
 
     <CategorySpecHeader1/>
  
-    {/* <AllCategBlogs1 blog={Productivity}/> */}
+    <AllCategBlogs1 blog={Productivity}/>
        
       
     </>

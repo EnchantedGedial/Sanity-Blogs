@@ -3,6 +3,9 @@ import { useRouter } from 'next/router'
 import { createClient } from "next-sanity";
 import PortableText from "react-portable-text"
 import { CgProfile } from 'react-icons/cg';
+import Image from 'next/image';
+import addvi from '../../Assets/ad-1.jpg'
+import NewsLetter from '../components/NewsLetter';
 
 const Post = ({blogs}) => {
     const router = useRouter()
@@ -89,6 +92,46 @@ const Post = ({blogs}) => {
               <i class='bx bx-user-plus ml-2' ></i>
             </button>
           </div>
+          <div class="p-4 mt-6 border-t border-b md:border md:rounded">
+            <div class="flex py-2">
+              <img src="https://randomuser.me/api/portraits/men/97.jpg"
+                class="h-10 w-10 rounded-full mr-2 object-cover" />
+              <div>
+                <p class="font-semibold text-gray-700 text-sm"> Mike Sullivan </p>
+                <p class="font-semibold text-gray-600 text-xs"> Editor </p>
+              </div>
+            </div>
+            <p class="text-gray-700 py-3">
+              Mike writes about technology
+              Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it.
+            </p>
+            <button class="px-2 py-1 text-gray-100 bg-green-700 flex w-full items-center justify-center rounded">
+              Follow 
+              <i class='bx bx-user-plus ml-2' ></i>
+            </button>
+          </div>
+          <div class="p-4 mt-6 border-t border-b md:border md:rounded"><NewsLetter/></div>
+          <div class="p-4 mt-6 border-t border-b md:border md:rounded">
+          <Image
+      src={addvi}
+      // width={500}
+      // height={500}
+      alt="Sample"
+    />
+          
+          </div>
+           
+          <div class="p-4 mt-6 border-t border-b md:border md:rounded">
+          <Image
+      src={addvi}
+      width={500}
+      height={500}
+      className='flex items-center content-center'
+      alt="Sample"
+    />
+          
+          </div>
+           
           <div>
             
           </div>
