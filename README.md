@@ -4,11 +4,11 @@ This is a Blogs website developed using Next.js for the front-end and Sanity for
 
 ## Features
 
-- User authentication: Users can create accounts, log in, and manage their profiles.
-- Blog post management: Users can create, edit, and delete their blog posts.
-- Search functionality: Users can search for specific blog posts based on keywords.
-- Responsive design: The website is optimized for various screen sizes and devices.
-- SEO-friendly: The website implements best practices for search engine optimization.
+- User authentication 🔥: Users can create accounts, log in, and manage their profiles.
+- Blog post management 📅: Users can create, edit, and delete their blog posts.
+- Search functionality 🔍: Users can search for specific blog posts based on keywords.
+- Responsive design 🪛: The website is optimized for various screen sizes and devices.
+- SEO-friendly 🕸️: The website implements best practices for search engine optimization.
 
 ## Technologies Used
 
@@ -39,10 +39,10 @@ To get started with the Blogs website, follow these steps:
    git clone https://github.com/EnchantedGedial/Sanity-Blogs
    ```
 
-2. Navigate to the project directory:
+2. Navigate to the frontend  project directory:
 
    ```shell
-   cd blogs-website
+   cd Next-fronted
    ```
 
 3. Install the dependencies:
@@ -50,8 +50,11 @@ To get started with the Blogs website, follow these steps:
    ```shell
    npm install
    ```
-
-4. Set up environment variables:
+4. Navigate to the backend project directory:
+    ```shell
+   cd Sanity-backend
+   ```
+5. Set up environment variables:
 
    - Create a `.env.local` file in the project root directory.
    - Add the following environment variables and replace the values with your own:
@@ -62,13 +65,13 @@ To get started with the Blogs website, follow these steps:
      SANITY_TOKEN=your-sanity-token
      ```
 
-5. Run the development server:
+6. Run the development server:
 
    ```shell
    npm run dev
    ```
 
-6. Open your browser and visit `http://localhost:3000` to see the website.
+7. Open your browser and visit `http://localhost:3000` to see the website.
 
 ## Configuration
 
@@ -97,9 +100,23 @@ The Blogs website is built upon the knowledge and resources provided by the Next
 
 ## Contact
 
+
+
+## Preview
+![FIRE Blogs small](https://github.com/EnchantedGedial/Sanity-Blogs/assets/119104375/a4d0040d-73a6-446d-acfc-48224b4301ee)
+![Screenshot 2023-06-26 195031](https://github.com/EnchantedGedial/Sanity-Blogs/assets/119104375/7957fa28-7cf9-497a-99c1-e361877a379e)
+![Screenshot 2023-06-26 195117](https://github.com/EnchantedGedial/Sanity-Blogs/assets/119104375/769db50b-1d1f-43f7-bfa1-6f4dd066745f)
+![image](https://github.com/EnchantedGedial/Sanity-Blogs/assets/119104375/54a3cac5-9bde-4945-8ff8-0d3d32fb31bb)
+![image](https://github.com/EnchantedGedial/Sanity-Blogs/assets/119104375/3cb5c2e9-723c-4f59-aae4-cc71a929364e)
+![image](https://github.com/EnchantedGedial/Sanity-Blogs/assets/119104375/ff53ad6a-8c94-45f2-837e-4e08d8a374ef)
+![image](https://github.com/EnchantedGedial/Sanity-Blogs/assets/119104375/f0de8ab7-84f8-45e2-81ff-9c5fb2c70ccb)
+
+
+
 For any inquiries or feedback, please contact the project maintainer:
 
-Name : Jayant 
-Email:jay.codmik.18@gmail.com
+- Name : Jayant 
+- Email: jay.codmik.18@gmail.com
+- Personal Site: https://enchantedgedial.github.io/Personal-Site 
 
 Feel free to reach out with any questions or concerns!
